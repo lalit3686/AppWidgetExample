@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.app.widget"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-sdk android:minSdkVersion="3" />
+
+    <application
+        android:icon="@drawable/app_icon"
+        android:label="@string/app_name" >
+
+        <!-- Broadcast Receiver that will process AppWidget updates -->
+        <receiver
+            android:name="com.example.app.widget.WordWidget"
+            android:exported="false"
+            android:label="@string/widget_name" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.example.app.widget.ACTION_WEBVIEW" />
+                <action android:name="com.example.app.widget.ACTION_REFRESH" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_word" />
+        </receiver>
+
+        <service android:name="com.example.app.widget.WordWidget$UpdateService" />
+
+        <activity android:name="com.example.app.widget.MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

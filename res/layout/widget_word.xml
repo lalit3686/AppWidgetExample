@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget"
+    style="@style/WidgetBackground"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:focusable="true" >
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/star_logo" />
+
+    <TextView
+        android:id="@+id/word_title"
+        style="@style/Text.WordTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1dip"
+        android:layout_marginTop="14dip"
+        android:ellipsize="end"
+        android:includeFontPadding="false"
+        android:singleLine="true" />
+    
+     <Button
+        android:id="@+id/button_widget"
+        style="@style/Text.WordType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/word_title"
+        android:ellipsize="end"
+        android:includeFontPadding="false"
+        android:paddingLeft="4dip"
+        android:text="@string/widget_text"
+        android:singleLine="true" />
+
+</RelativeLayout>
